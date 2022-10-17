@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebCustoms</title>
+    <title>WebsCustoms</title>
+    <link rel="shortcut icon" href="images//webscustoms-logo.png" type="image/x-icon">nk
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"></head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></head>
-<body class="dark">
+<body id="my-scrollbar">
     <!-- Pre Loading -->
     <div class="loader_bg">
         <div class="loader"></div>
@@ -16,15 +17,18 @@
 
     <!-- Nav Section -->
     <div class="nav nav-hidden" id="home">
-        <h2><a href="index.html">WebCustoms</a></h2>
+        <h2><a href="index.html">WebsCustoms</a></h2>
         <div class="hamb"><i class="fa fa-bars"></i></div>
         <ul class="navlinks active">
-            <li><a href="#homee">Home</a></li>
+            <li><a href="#homee" class="aactive">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact Us</a></li>
-            <a class="moon" href="#"><i class="fa-solid fa-moon"></i></a>
+            <div class="social">
+                <a href="https://www.instagram.com/webscustoms/"><i class="fa fa-instagram"></i></a>
+                <a href="https://www.instagram.com/webcustoms_/"><i class="fa fa-twitter"></i></a>
+            </div>
         </ul>
     </div>
 
@@ -39,7 +43,7 @@
                 </form>
             </div>
             <div class="image">
-                <img src="images/undraw_building_websites_i78t.svg" alt="">
+                <img src="images/undraw_heatmap_uyye (2).svg" alt="">
             </div>
         </div>
     </section>
@@ -48,8 +52,8 @@
     <section class="about" id="about">
         <h2 class="title">About Us</h2>
         <p class="description">Company Introduction</p>
-        <div class="container">
-            <img src="images/undraw_website_builder_re_ii6e.svg" alt="">
+        <div class="container reveal">
+            <img src="images/undraw_pair_programming_re_or4x.svg" alt="">
             <div class="paragraph">
                 <div class="text text-1">
                     <h3>Who We Are</h3>
@@ -68,7 +72,7 @@
     <section class="services" id="services">
         <h2 class="title">Services</h2>
         <p class="description">What We Offer</p>
-        <div class="container">
+        <div class="container reveal">
             <div class="box-1 box">
                 <div class="text">
                     <i id="icon" class="fa fa-pencil"></i>
@@ -100,7 +104,7 @@
     <section class="projects" id="projects">
         <h2 class="title">Projects</h2>
         <p class="description">Our Most Recent Work</p>
-        <div class="container">
+        <div class="container reveal">
             <div class="box-1 box">
                 <img class="img1" src="images/iTechdesktop.png" alt="">
                 <img class="img2" src="images/iTechmobile.png" alt="">
@@ -162,7 +166,7 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <h2 class="logo">WebCustoms</h2>
+            <h2 class="logo">WebsCustoms</h2>
             <div class="social">
                 <a href="https://www.instagram.com/webcustoms_/"><i class="fa fa-instagram"></i></a>
                 <a href="https://www.instagram.com/webcustoms_/"><i class="fa fa-twitter"></i></a>
@@ -170,7 +174,7 @@
             </div>
             <p>
                 <i class="fa fa-copyright"></i>
-                <span>WebCustoms.   </span>
+                <span>WebsCustoms.   </span>
                 All right reserved
             </p>
         </div>
@@ -178,6 +182,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
+        // PRE LOAD IMAGE
         setTimeout(function(){
             $('.loader_bg').fadeToggle();
         }, 1500);
@@ -200,8 +205,35 @@
 
                 lastScrollY = window.scrollY;
             });
+
+            
         }
-        
+
+        // ELEMENTS REAVEAl ON SCROLL
+
+        window.addEventListener('scroll', reveal);
+
+        function reveal()
+        {
+            var reveals = document.querySelectorAll(".reveal");
+
+            for (var i = 0; i < reveals.length; i++)
+            {
+                var windowheight = window.innerHeight;
+                var revealTop = reveals[i].getBoundingClientRect().top;
+                var revealpoint = 150;
+
+                if (revealTop < windowheight - revealpoint)
+                {
+                    reveals[i].classList.add("active");
+                }
+                else
+                {
+                    reveals[i].classList.remove("active");
+                }
+            }
+        }
+                
     </script>
     <script src="script.js"></script>
 </body>
