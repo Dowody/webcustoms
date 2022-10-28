@@ -140,6 +140,7 @@ body
     display: flex;
     align-items: center;
     display: none;
+    background: none;
 }
 
 .nav-hidden
@@ -800,11 +801,6 @@ footer .container p
         display: flex;
     }
 
-    .nav ul .moon
-    {
-        margin-top: 10px;
-    }
-    
     .nav ul li
     {
         padding: .7rem 1rem;
@@ -822,8 +818,18 @@ footer .container p
         justify-content: space-between;
     }
 
-    .home .container .main-content 
+    section.home
     {
+        padding: 250px 20px 0 20px;
+        width: 100%;
+        height: 100vh;
+        background-image: url(images/Mobile-Background.jpg);
+        background-attachment: fixed;
+    }
+
+    .home .container .main-content
+    {
+        
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -840,7 +846,7 @@ footer .container p
     .home .container .main-content h2
     {
         font-size: 35px;
-        width: 300px;
+        width: 100%;
         text-align: center;
     }
     .auto-input
@@ -852,7 +858,7 @@ footer .container p
 
     .home .container .main-content p
     {
-        width: 300px;
+        width: 100%;
         margin-top: 10px;
         color: var(--p-color);
     }
@@ -860,7 +866,7 @@ footer .container p
     .home .container .main-content button
     {
         margin-left: 0px;
-        background-color: var(--button-blue);
+        color: var(--black);
         font-family: 'Poppins', sans-serif;
         font-size: 15px;
         width: 100%;
@@ -886,7 +892,7 @@ footer .container p
 
     section.about
     {
-        padding: 50px 50px 0 50px;
+        padding: 50px 20px 0 20px;
         width: 100%;
         height: 100vh;
     }
@@ -935,9 +941,9 @@ footer .container p
     /* SERVICES */
     section.services
     {
-        padding: 50px 30px 0 30px;
+        padding: 50px 20px 0 20px;
         width: 100%;
-        height: 160vh;
+        height: 200vh;
     }
     
     .services .container
@@ -958,7 +964,7 @@ footer .container p
         background-color: var(--black);
         box-shadow: 0px 10px 10px 10px #36363626;
         width: 100%;
-        height: 65vh;
+        height: 80vh;
         border-radius: 20px;
         display: flex;
         flex-direction: column;
@@ -970,9 +976,9 @@ footer .container p
 
     section.projects
     {
-        padding: 50px 50px 0 50px;
+        padding: 50px 20px 0 20px;
         width: 100%;
-        height: 170vh;
+        height: 200vh;
     }
 
     .projects .container
@@ -987,7 +993,7 @@ footer .container p
     .projects .container .box
     {
         background-color: var(--black);
-        border: 1px solid var(--p-blue);
+        border: 1px solid var(--main-color);
         border-radius: 10px;
         width: 300px;
         height: 300px;
@@ -1054,7 +1060,7 @@ footer .container p
 
     section.contact
     {
-        padding: 50px 50px 0 50px;
+        padding: 50px 30px 0 30px;
         width: 100%;
         height: 100vh;
     }
@@ -1064,13 +1070,50 @@ footer .container p
 
 @media screen and (max-width: 325px) 
 {
- 
-    
+    section.home
+    {
+        padding: 150px 20px 0 20px;
+        width: 100%;
+        height: 100vh;
+        background-image: url(images/Mobile-Background.jpg);
+        background-attachment: fixed;
+    }
 
+   
+    .title
+    {
+        font-size: 25px;
+    }
+    .description
+    {
+        font-size: 12px;
+    }
+
+    .home .container .main-content h2
+    {
+        font-size: 35px;
+        width: 100%;
+        text-align: center;
+    }
+    .auto-input
+    {
+        font-size: 30px;
+        color: var(--white);
+        margin-top: 30px;
+    }
+
+    .home .container .main-content p
+    {
+        width: 100%;
+        margin-top: 10px;
+        color: var(--p-color);
+    }
+
+    
     .home .container .main-content button
     {
         background-color: var(--button-blue);
-        color: #fff;
+        color: var(--black);
         font-family: 'Poppins', sans-serif;
         font-size: 15px;
         width: 120%;
@@ -1085,9 +1128,9 @@ footer .container p
 
     section.about
     {
-        padding: 50px 25px 0 25px;
+        padding: 50px 20px 0 20px;
         width: 100%;
-        height: 100vh;
+        height: 150vh;
     }
 
     
@@ -1095,9 +1138,9 @@ footer .container p
     /* SERVICES */
     section.services
     {
-        padding: 50px 25px 0 25px;
+        padding: 50px 20px 0 20px;
         width: 100%;
-        height: 180vh;
+        height: 300vh;
     }
     
     .services .container .box-1
@@ -1110,7 +1153,7 @@ footer .container p
         background-color: var(--black);
         box-shadow: 0px 10px 10px 10px #24242426;
         width: 100%;
-        height: 70vh;
+        height: 120vh;
         display: flex;
         flex-direction: column;
         text-align: center;
@@ -1121,9 +1164,9 @@ footer .container p
 
     section.projects
     {
-        padding: 50px 50px 0 50px;
+        padding: 50px 20px 0 20px;
         width: 100%;
-        height: 170vh;
+        height: 250vh;
     }
 
     .projects .container
@@ -1138,13 +1181,13 @@ footer .container p
     .projects .container .box
     {
         background-color: var(--black);
-        border: 1px solid var(--p-blue);
+        border: 1px solid var(--main-color);
         border-radius: 10px;
         width: 250px;
         height: 250px;
         margin-left: -10px;
         transition: .3s ease;
-        display: block;
+        margin-left: 15px;
     }      
 
     .projects .container .box-1
@@ -1204,11 +1247,15 @@ footer .container p
 
     section.contact
     {
-        padding: 50px 50px 0 50px;
+        padding: 50px 30px 0 30px;
         width: 100%;
-        height: 100vh;
+        height: 150vh;
     }
     
+    footer
+    {
+        height: 200px;
+    }
     
 }
 
