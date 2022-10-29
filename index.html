@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WebsCustoms</title>
     <link rel="shortcut icon" href="images//webscustoms-logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="ro.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"></head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></head>
+    <link href="https://allfont.net/allfont.css?fonts=pricedown" rel="stylesheet" type="text/css" />
 <body id="my-scrollbar">
         <!-- Pre Loading -->
         <div class="loader_bg">
@@ -35,6 +36,17 @@
         <!-- Home Section -->
         <section class="home" id="homee">
             <div class="container" id="home">
+                <picture>
+                    <!-- <source 
+                        media="(max-width: 640px)"
+                        srcset="images/Mobile-Background.jpg">
+                    <source 
+                        media="(min-width: 640px)"
+                        srcset="images/backgr.jpg"> -->
+                    <!-- <img 
+                        src="images/kitten-curled.png" 
+                        alt="a cute kitten"> -->
+                </picture>
                 <div class="main-content">
                     <h2><span class="auto-input"></span></h2>
                     <p>Cu ajutorul profesioniștilor noștri, îți vei captiva publicul cu design-uri web intuitive UI și UX. Dezvoltatorii și designerii noștri lucrează împreună pentru a vă salva bani și timp.</p>
@@ -205,13 +217,14 @@
                 {
                     nav.classList.add("nav-hidden");
                 } 
-                else
+                else if (lastScrollY > window.scrollY)
                 {
                     nav.classList.remove("nav-hidden");
                 }
 
                 lastScrollY = window.scrollY;
             });
+
 
             
         }
