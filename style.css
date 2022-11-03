@@ -154,16 +154,15 @@ body
     top: 0;
     left: 0;
     padding: 20px 100px;
-    display: flex;
-    /* background-color: var(--black); */
     transition: .3s ease;
     z-index: 999999;
     width: 100%;
-
+    display: flex;
 }
 
-.nav h2
+.nav img
 {
+    width: 200px;
     font-family: 'Pricedown', arial;
     font-weight: 500;
     font-size: 35px;
@@ -171,11 +170,7 @@ body
     background: -webkit-linear-gradient(-90deg, #14d6a9, #319bff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-}
-
-.nav h2 a
-{
-    color: #ffffff;
+    display: flex;
 }
 
 .nav ul
@@ -247,7 +242,7 @@ section.home
     padding: 250px 100px 0 100px;
     width: 100%;
     height: 100vh;
-    background-image: url(images/backgr.jpg) ;
+    background-image: url(backgr.png) ;
     background-attachment: fixed;
     background-size: cover;
 }
@@ -819,15 +814,20 @@ footer .container p
         display: none;
         justify-content: center;
         margin-top: 10px;
-        margin-left: 0;
+        margin-left: 0px;
         flex-direction: column;
         width: 100%;
         height: 40vh;
         border-radius: 0px 0px 10px 10px;
+        z-index: 999;
     }
     .nav .navlinks.active
     {
         display: flex;
+    }
+    .nav .navlinks.navlinks-hidden
+    {
+        display: hidden;
     }
 
     .nav ul li
@@ -837,8 +837,15 @@ footer .container p
     
     .nav ul li a
     {
+        border: 1px solid #1fc0c8;
         color: #ffffff;
     }
+    .nav ul .social
+    {
+        border-left: none;
+        color: #ffffff;
+    }
+
     
     .home .container
     {
@@ -852,7 +859,7 @@ footer .container p
         padding: 250px 20px 0 20px;
         width: 100%;
         height: 100vh;
-        background-image: url(images/Mobile-Background.jpg) cover;
+        background-image: url(Mobile-Background.png) cover;
         background-size: 1400px;
         background-attachment: fixed;
     }
