@@ -132,22 +132,17 @@ body
 
 /* NAV */
 
-.nav .hamb
-{
-    position: absolute;
-    right: 0;
-    font-size: 2rem;
-    display: flex;
-    align-items: center;
-    display: none;
-    background: none;
-}
 
 .nav-hidden
 {
     transform: translateY(calc(-1 * 100px));
-}
+} 
 
+.header
+{
+    width: 100%;
+    position: absolute;
+}
 .nav
 {
     position: fixed;
@@ -160,33 +155,84 @@ body
     display: flex;
 }
 
+
+
+.hamb{
+    cursor: pointer;
+    float: right;
+    padding: 20px 0px;
+    display: none;
+}/* Style label tag */
+
+.hamb-line {
+    background: var(--white);
+    display: block;
+    height: 2px;
+    position: relative;
+    width: 24px;
+
+} /* Style span tag */
+
+.hamb-line::before,
+.hamb-line::after{
+    background: var(--white);
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+.hamb-line::before{
+    top: 7px;
+}
+.hamb-line::after{
+    top: -7px;
+}
+
+.side-menu {
+    display: none;
+} /* Hide checkbox */
+.side-menu:checked ~ nav{
+    max-height: 100%;
+}
+.side-menu:checked ~ .hamb .hamb-line {
+    background: transparent;
+}
+.side-menu:checked ~ .hamb .hamb-line::before {
+    transform: rotate(-45deg);
+    top:0;
+}
+.side-menu:checked ~ .hamb .hamb-line::after {
+    transform: rotate(45deg);
+    top:0;
+}
+
+
+
 .nav img
 {
+    margin-top: 10px;
     width: 200px;
     font-family: 'Pricedown', arial;
     font-weight: 500;
     font-size: 35px;
     cursor: pointer;
-    background: -webkit-linear-gradient(-90deg, #14d6a9, #319bff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    display: flex;
 }
 
-.nav ul
+.nav #menu
 {
     display: flex;
-    margin-left: 300px;
+    margin-left: 250px;
     align-items: center;
 }
 
-.nav ul li 
+.nav #menu li 
 {
     padding: 0 10px;
-    
 }
 
-.nav ul li a
+.nav #menu li .links
 {
     color: #fff;
     transition: .2s ease;
@@ -195,20 +241,18 @@ body
     transition: .3s ease;
 }
 
-.aactive 
+.nav #menu li .links.active 
 {
     border: 1px solid var(--main-color);
 }
 
-.nav ul li a:hover
+.nav #menu li .links:hover
 {
     color: var(--black);
     background-color: var(--main-color);
-
-
 }
 
-.nav ul .social 
+.nav #menu .social 
 {
     color: #fff;
     align-items: center;
@@ -216,22 +260,81 @@ body
     border-left: 1px solid #1fc0c8;
     padding: 0 20px;
 }
-.nav ul .social .fa-instagram
+.nav #menu .social .fa-instagram
 {
     margin-right: 10px;
 }
-.nav ul .social i
+.nav #menu .social i
 {
     font-size: 20px;
     cursor: pointer;
     color: var(--white);
     transition: .3s ease;
 }
-.nav ul .social i:hover
+.nav #menu .social i:hover
 {
     color: var(--main-color);
 }
 
+.languages
+{
+    display: flex;
+    flex-direction: column;
+    color: var(--white);
+    align-content: center;
+    border: 1px solid var(--white);
+    border-radius: 20px;
+    position: absolute;
+    right: 110px;
+    top: 20px;
+    z-index: 9999999;
+}
+
+.select-btn
+{
+    padding: 7px;
+    cursor: pointer;
+}
+.select-btn.active
+{
+    padding: 7px;
+    cursor: pointer;
+}
+.select-btn i
+{
+    margin-left: 5px;
+}
+.languages .content
+{
+    display: none;
+}
+.languages .content.active
+{
+    display: block;
+}
+.languages .content .options
+{
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 5px;
+}
+.languages .content .options li
+{
+    width: 51.5px;
+    display: flex;
+    justify-content: center;
+    color: var(--white);
+}
+.languages .content ul li a
+{
+    color: var(--white);
+    transition: .3s ease;
+    
+}
+.languages .content ul li a:hover
+{
+    color: var(--main-color);
+}
 
 
 
@@ -242,10 +345,11 @@ section.home
     padding: 250px 100px 0 100px;
     width: 100%;
     height: 100vh;
-    background-image: url(backgr.png) ;
+    background-image: url(images/backgr.png) ;
     background-attachment: fixed;
     background-size: cover;
 }
+
 
 .home .container
 {
@@ -287,10 +391,8 @@ section.home
 
 .home .container .main-content button
 {
-    margin-left: -50px;
     font-family: 'Poppins', sans-serif;
     font-size: 15px;
-    width: 250%;
     height: 3rem;
     border-radius: 10px;
     cursor: pointer;
@@ -299,6 +401,7 @@ section.home
     background-size: 300%;
     background-position: left;
     transition: .5s background-position ease-in-out;
+    padding: 0 20px;
 }
 
 .home .container .main-content button:hover
@@ -317,7 +420,7 @@ section.home
 
 section.about
 {
-    padding: 50px 100px 0 100px;
+    padding: 100px 100px 0 100px;
     width: 100%;
     height: 100vh;
 }
@@ -393,7 +496,7 @@ section.about
 
 section.services
 {
-    padding: 50px 100px 0 100px;
+    padding: 100px 100px 0 100px;
     width: 100%;
     height: 100vh;
 }
@@ -499,7 +602,7 @@ section.services
 
 section.projects
 {
-    padding: 50px 100px 0 100px;
+    padding: 100px 100px 0 100px;
     width: 100%;
     height: 100vh;
 }
@@ -626,7 +729,7 @@ section.projects
 
 section.contact
 {
-    padding: 50px 100px 0 100px;
+    padding: 100px 100px 0 100px;
     width: 100%;
     height: 100vh;
 }
@@ -744,12 +847,10 @@ footer .container
     text-align: center;
 }
 
-footer .container h2
+footer .container .logo img
 {
-    font-family: 'Pricedown', arial;
-    font-size: 35px;
-    font-weight: 500;
-    margin-top: 10px;
+    width: 200px;
+    
 }
 
 footer .container .social
@@ -785,66 +886,82 @@ footer .container p
 /* ##################################### */
 
 
-@media screen and (max-width: 640px) 
+@media screen and (max-width: 768px) 
 {
- 
+    .languages
+    {
+        position: static;
+        width: 100px;
+        margin: 50px auto;
+    }
+   
+    /* HAMBURGER MENU */
+    .hamb
+    {
+        display: block;
+    }
+    .nav #menu 
+    {
+        display: none;
+    }
+    .nav #menu.active
+    {
+        display: block;
+        background-color: var(--box-color);
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        top: 0px;
+        left: -100%;
+        text-align: center;
+        margin: 0;
+        padding-top: 200px;
+        display: inline-block;
+        transition: all .5s;
+        z-index: -1;
+    }
+    .nav #menu li
+    {
+        padding: 1rem .2rem;
+    }
+    #side-menu:checked ~ #menu
+    {
+        left: 0;
+    }
+    .nav #menu li .links
+    {
+        border: 1px solid #1fc0c8;
+        color: var(--white);
+    }
+
+    
     .nav
     {
         width: 100%;
         padding: 20px 30px;
-        flex-direction: column;
-        align-items: flex-start;
         color: #ffffff;
+        display: block;
     }
 
-    .nav h2
+    .nav .logo 
     {
-        color: #ffffff;
+        width: 50px;
     }
 
-    .nav .hamb 
-    {
-        display: flex;
-        right: 30px;
-        cursor: pointer;
-    }
     
-    .nav .navlinks
-    {
-        display: none;
-        justify-content: center;
-        margin-top: 10px;
-        margin-left: 0px;
-        flex-direction: column;
-        width: 100%;
-        height: 40vh;
-        border-radius: 0px 0px 10px 10px;
-        z-index: 999;
-    }
-    .nav .navlinks.active
-    {
-        display: flex;
-    }
-    .nav .navlinks.navlinks-hidden
-    {
-        display: hidden;
-    }
-
-    .nav ul li
-    {
-        padding: .7rem 1rem;
-    }
     
-    .nav ul li a
+    .nav #menu .social
     {
-        border: 1px solid #1fc0c8;
-        color: #ffffff;
-    }
-    .nav ul .social
-    {
+        margin-top: 30px;
         border-left: none;
-        color: #ffffff;
     }
+    .nav #menu .social a i
+    {
+        padding: 5px;
+        font-size: 25px;
+        color: var(--main-color);
+    }
+
 
     
     .home .container
@@ -856,12 +973,16 @@ footer .container p
 
     section.home
     {
-        padding: 250px 20px 0 20px;
+        padding: 200px 20px 0 20px;
         width: 100%;
         height: 100vh;
-        background-image: url(Mobile-Background.png) cover;
-        background-size: 1400px;
+        background-image: url(/images/Mobile-Background.png) ;
+        background-size: 450px;
         background-attachment: fixed;
+    }
+    .home img
+    {
+        width: 300%;
     }
 
     .home .container .main-content
@@ -929,7 +1050,7 @@ footer .container p
 
     section.about
     {
-        padding: 50px 20px 0 20px;
+        padding: 100px 20px 0 20px;
         width: 100%;
         height: 100vh;
     }
@@ -978,7 +1099,7 @@ footer .container p
     /* SERVICES */
     section.services
     {
-        padding: 50px 20px 0 20px;
+        padding: 100px 20px 0 20px;
         width: 100%;
         height: 200vh;
     }
@@ -1013,7 +1134,7 @@ footer .container p
 
     section.projects
     {
-        padding: 50px 20px 0 20px;
+        padding: 100px 20px 0 20px;
         width: 100%;
         height: 200vh;
     }
@@ -1097,22 +1218,40 @@ footer .container p
 
     section.contact
     {
-        padding: 50px 30px 0 30px;
+        padding: 100px 30px 0 30px;
         width: 100%;
-        height: 100vh;
+        height: 110vh;
     }
-    
+    section.contact .container
+    {
+        margin-top: 50px;
+    }
     
 }
 
 @media screen and (max-width: 325px) 
-{
+{   
+    .nav #menu.active
+    {
+        padding-top: 100px;
+    }
+    .nav #menu li
+    {
+        padding: 0.7rem .2rem;
+    }
+
+    .nav img
+    {
+        width: 180px;
+    }
+
     section.home
     {
-        padding: 150px 20px 0 20px;
+        padding: 100px 20px 0 20px;
         width: 100%;
         height: 100vh;
-        background-image: url(images/Mobile-Background.jpg);
+        background-image: url(images/Mobile-Background.png);
+        background-size: 400px;
         background-attachment: fixed;
     }
 
